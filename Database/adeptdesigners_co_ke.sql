@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2021 at 01:23 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Jul 04, 2021 at 10:35 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,51 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
---
-
-CREATE TABLE `cart` (
-  `id` int(11) NOT NULL,
-  `customer_name` varchar(30) NOT NULL,
-  `customer_phone_no` varchar(50) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `product_id` varchar(10) NOT NULL,
-  `product_name` varchar(50) NOT NULL,
-  `total_price` int(10) NOT NULL,
-  `quantity` int(10) NOT NULL,
-  `payment_status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `customers`
 --
 
 CREATE TABLE `customers` (
   `id` int(11) NOT NULL,
-  `order_id` varchar(30) NOT NULL,
-  `date` varchar(30) NOT NULL,
+  `cid` varchar(30) NOT NULL,
+  `date` varchar(20) NOT NULL,
   `time` varchar(20) NOT NULL,
-  `national_id` varchar(20) NOT NULL,
-  `amount_paid` int(30) NOT NULL,
   `name` varchar(50) NOT NULL,
+  `phone_number` varchar(10) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone_number` varchar(20) NOT NULL,
-  `payment_method` varchar(10) NOT NULL,
-  `payment_status` varchar(20) NOT NULL
+  `national_id` int(11) NOT NULL,
+  `amount_paid` int(15) NOT NULL,
+  `payment_method` varchar(15) NOT NULL,
+  `payment_status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `order_id`, `date`, `time`, `national_id`, `amount_paid`, `name`, `email`, `phone_number`, `payment_method`, `payment_status`) VALUES
-(4, '1207060d45dfc76261', '24/6/2021', '1 : 27 PM', '32599065', 2500, 'George Ngugi', 'go.ngugi@yahoo.com', '0709345673', 'Mpesa', 'Pending'),
-(5, '5670660d46234b9379', '24/6/2021', '1 : 45 PM', '32599065', 2500, 'George Ngugi', 'go.ngugi@yahoo.com', '0709345673', 'Mpesa', 'Pending'),
-(6, '8634660d46406d4c8f', '24/6/2021', '1 : 52 PM', '32599065', 1500, 'George Ngugi', 'gowqk.ngugi@yahoo.com', '0709345645', 'Mpesa', 'Pending'),
-(7, '5097960d468ca3583a', '24/6/2021', '2 : 13 PM', '32599065', 1500, 'George Ngugi', 'gok.ngugi@yahoo.com', '0709345623', 'Mpesa', 'Pending'),
-(8, '3679060d46a7dbad64', '24/6/2021', '2 : 20 PM', '32596554', 1500, 'Tree Tree', 'thairugeorge07@gmail.com', '8709345645', 'Mpesa', 'Pending');
+INSERT INTO `customers` (`id`, `cid`, `date`, `time`, `name`, `phone_number`, `email`, `national_id`, `amount_paid`, `payment_method`, `payment_status`) VALUES
+(14, '3337160e21a7aaa736', '04/7/2021', '11 : 30 PM', 'Peter Mwambi', '0700521998', 'calebmwambi@gmail.com', 37999565, 6150, 'Mpesa', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -78,26 +56,22 @@ INSERT INTO `customers` (`id`, `order_id`, `date`, `time`, `national_id`, `amoun
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `order_id` varchar(30) NOT NULL,
-  `date` varchar(30) NOT NULL,
+  `order_id` varchar(50) NOT NULL,
+  `date` varchar(20) NOT NULL,
   `time` varchar(20) NOT NULL,
-  `product_id` varchar(20) NOT NULL,
+  `product_id` varchar(10) NOT NULL,
   `product_name` varchar(50) NOT NULL,
-  `quantity` int(10) NOT NULL,
   `total_price` int(10) NOT NULL,
-  `payment_status` varchar(20) NOT NULL
+  `quantity` int(10) NOT NULL,
+  `payment_status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `order_id`, `date`, `time`, `product_id`, `product_name`, `quantity`, `total_price`, `payment_status`) VALUES
-(5, '1207060d45dfc76261', '24/6/2021', '1 : 27 PM', '497435', 'Ladies Flat Shoes', 1, 2500, 'pending'),
-(6, '5670660d46234b9379', '24/6/2021', '1 : 45 PM', '497435', 'Ladies Flat Shoes', 1, 2500, 'pending'),
-(7, '8634660d46406d4c8f', '24/6/2021', '1 : 52 PM', '978261', 'Ladies Sneakers', 1, 1500, 'pending'),
-(8, '5097960d468ca3583a', '24/6/2021', '2 : 13 PM', '978261', 'Ladies Sneakers', 1, 1500, 'pending'),
-(9, '3679060d46a7dbad64', '24/6/2021', '2 : 20 PM', '978261', 'Ladies Sneakers', 1, 1500, 'pending');
+INSERT INTO `orders` (`id`, `order_id`, `date`, `time`, `product_id`, `product_name`, `total_price`, `quantity`, `payment_status`) VALUES
+(10, '3337160e21a7aaa736', '04/7/2021', '11 : 30 PM', '497435', '{\"id\":\"497435\",\"name\":\"ladies flat shoes\",\"price\":', 6150, 1, 'pending');
 
 -- --------------------------------------------------------
 
@@ -228,31 +202,83 @@ CREATE TABLE `suppliers` (
   `package_quantity` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_bio_info`
+--
+
+CREATE TABLE `users_bio_info` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(20) NOT NULL,
+  `day_joined_int` int(3) NOT NULL,
+  `day_joined` varchar(10) NOT NULL,
+  `month_joined` varchar(10) NOT NULL,
+  `year_joined` varchar(4) NOT NULL,
+  `time_joined` varchar(15) NOT NULL,
+  `login_date` varchar(30) NOT NULL,
+  `login_day` varchar(10) NOT NULL,
+  `login_time` varchar(10) NOT NULL,
+  `login_status` varchar(15) NOT NULL,
+  `profile_picture` varchar(30) DEFAULT NULL,
+  `username` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `nickname` varchar(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `password` varchar(65) NOT NULL,
+  `phone_number` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users_bio_info`
+--
+
+INSERT INTO `users_bio_info` (`id`, `user_id`, `day_joined_int`, `day_joined`, `month_joined`, `year_joined`, `time_joined`, `login_date`, `login_day`, `login_time`, `login_status`, `profile_picture`, `username`, `nickname`, `email`, `password`, `phone_number`) VALUES
+(12, 'ADPT-765-USR-341', 8, 'Saturday', 'May', '2021', '1:14 PM', 'July 4 2021', 'Sunday', '4:35 PM', 'Active', NULL, 'Peter', 'Mwambi', 'calebmwambi@gmail.com', '$2y$10$t8u3T.21MYorY1KvASBrpeJ07gVEpO5O6GZyGCbNkadQ1Kz2WLQf6', '0700521998'),
+(13, 'ADPT-666-USR-329', 8, 'Saturday', 'May', '2021', '1:19 PM', 'July 4 2021', 'Sunday', '4:35 PM', 'Active', NULL, 'Mwambi', NULL, 'petermwambi@gmail.com', '$2y$10$t8u3T.21MYorY1KvASBrpeJ07gVEpO5O6GZyGCbNkadQ1Kz2WLQf6', '0717334277'),
+(14, 'ADPT-307-USR-293', 8, 'Saturday', 'May', '2021', '1:21 PM', 'July 4 2021', 'Sunday', '4:35 PM', 'Active', NULL, 'Mwasagua', NULL, 'caleb@gmail.com', '$2y$10$t8u3T.21MYorY1KvASBrpeJ07gVEpO5O6GZyGCbNkadQ1Kz2WLQf6', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_personal_info`
+--
+
+CREATE TABLE `users_personal_info` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(20) NOT NULL,
+  `firstname` varchar(20) DEFAULT NULL,
+  `lastname` varchar(20) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `birth_day` varchar(10) DEFAULT NULL,
+  `birth_month` varchar(11) DEFAULT NULL,
+  `birth_year` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users_personal_info`
+--
+
+INSERT INTO `users_personal_info` (`id`, `user_id`, `firstname`, `lastname`, `gender`, `birth_day`, `birth_month`, `birth_year`) VALUES
+(1, 'ADPT-765-USR-341', 'Peter', 'Mwambi', 'male', '05', 'Apr', '1998');
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `product_id` (`product_id`),
-  ADD UNIQUE KEY `ID Number` (`customer_id`);
 
 --
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `order_id` (`order_id`);
+  ADD UNIQUE KEY `customer_id` (`cid`);
 
 --
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `order_id` (`order_id`);
+  ADD UNIQUE KEY `product_id` (`product_id`),
+  ADD UNIQUE KEY `order Id` (`order_id`);
 
 --
 -- Indexes for table `products`
@@ -284,26 +310,38 @@ ALTER TABLE `suppliers`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `users_bio_info`
 --
+ALTER TABLE `users_bio_info`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `Username` (`username`),
+  ADD UNIQUE KEY `user Identification` (`user_id`),
+  ADD UNIQUE KEY `phone_number` (`phone_number`),
+  ADD UNIQUE KEY `User_email` (`email`),
+  ADD UNIQUE KEY `Profile Picture` (`profile_picture`);
 
 --
--- AUTO_INCREMENT for table `cart`
+-- Indexes for table `users_personal_info`
 --
-ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users_personal_info`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -328,6 +366,18 @@ ALTER TABLE `subscriptions`
 --
 ALTER TABLE `suppliers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users_bio_info`
+--
+ALTER TABLE `users_bio_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `users_personal_info`
+--
+ALTER TABLE `users_personal_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
