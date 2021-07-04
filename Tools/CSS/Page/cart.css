@@ -1,0 +1,19 @@
+body {
+  background-image: none;
+  background: linear-gradient(
+    90deg,
+    rgb(228, 228, 228),
+    rgb(247, 244, 236),
+    rgb(231, 231, 231)
+  );
+}
+.resized {
+  max-width: 20px;
+}
+.hovereble:hover {
+  background-color: beige;
+}
+.cart-product-image {
+  max-width: 100px;
+  border-radius: 5px;
+}

@@ -1,0 +1,17 @@
+.admin-login-body {
+  margin-top: 15%;
+  width: 75%;
+  padding: 3.5rem 3.5rem 3.5rem 3.5rem;
+  border-radius: 10px;
+  background-color: rgb(169, 169, 169);
+}
+.admin-login {
+  top: 0.33%;
+  left: 13%;
+}
+#admin-carousel .carousel-item {
+  max-height: 100vh;
+}
+input[type="file"] {
+  display: none;
+}

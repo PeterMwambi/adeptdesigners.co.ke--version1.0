@@ -1,0 +1,92 @@
+.background-home {
+  --image-url: url("../../assets/fotografierende-333oj7zFsdg-unsplash.jpg");
+  width: 100%;
+  position: sticky;
+  scroll-behavior: auto;
+}
+.overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--image-url);
+  background-repeat: no-repeat;
+}
+
+.overlay-background {
+  background: linear-gradient(90deg, rgb(0, 0, 0), rgba(78, 77, 77, 0.945));
+  width: 100%;
+  min-height: 60vh;
+}
+.footer-title {
+  top: 64.5%;
+  width: 100%;
+  height: auto;
+}
+.btn-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(243, 157, 76, 0.986),
+    rgba(248, 186, 94, 0.616)
+  );
+}
+.btn-overlay:hover {
+  background: linear-gradient(
+    to right,
+    rgba(238, 189, 144, 0.986),
+    rgba(146, 118, 77, 0.616)
+  );
+  transition: background, 0.9s, ease-in;
+  font-size: large;
+  color: white;
+  border: none;
+}
+.executive-ceo:hover {
+  transition: ease 0.5s;
+}
+.executive-image-sm {
+  max-width: 70px;
+}
+.additional-info-ceo {
+  margin-left: 5px;
+}
+.leader-banner {
+  background: linear-gradient(to left, rgb(252, 152, 21), rgb(160, 94, 7));
+  z-index: 4;
+  width: 100%;
+  margin-left: 5px;
+  transition: 0.5s, ease-in-out;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.executive-md:hover {
+  /* transform: scale(1.2); */
+  transition: ease 0.5s;
+}
+.no-radius {
+  border-radius: none !important;
+}
+
+.partner:hover {
+  background: linear-gradient(
+    rgba(252, 194, 119, 0.411),
+    rgba(248, 163, 52, 0.582)
+  );
+  width: 100%;
+  z-index: 1950;
+  position: absolute;
+}
+.additional-info-md {
+  margin-left: -5px;
+}
+
+.executive-deputy-ceo:hover {
+  transition: ease 0.5s;
+}
+
+.additional-info-deputy-ceo {
+  margin-left: -10px;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: orange !important;
+  color: white !important;
+}

@@ -1,0 +1,15 @@
+.background-home {
+  --image-url: url("../../assets/annie-spratt-goholCAVTRs-unsplash.jpg"),
+    url("../../assets/kai-pilger-7YwWjgS7aJs-unsplash.jpg");
+  width: 100%;
+}
+.overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--image-url);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.footer-nav li a:hover {
+  color: rgb(253, 191, 76);
+}

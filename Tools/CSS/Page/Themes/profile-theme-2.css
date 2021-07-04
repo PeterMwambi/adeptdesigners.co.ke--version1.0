@@ -1,0 +1,241 @@
+input[type="file"] {
+    display: none;
+}
+
+.navbar .nav-link {
+    color: rgb(80, 76, 73);
+    transition: ease-in 0.1s;
+}
+
+.navbar .nav-link:hover {
+    background: none;
+    border-radius: 0;
+    padding-bottom: 0.3rem;
+    transition: ease-out 0.1s;
+    color: rgb(61, 59, 56);
+}
+
+.icon-smaller {
+    max-width: 20px;
+    margin-bottom: 0.3rem;
+}
+
+.dropdown-menu {
+    border-radius: 0;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: none;
+    border-radius: 0;
+    padding-bottom: 0.3rem;
+    transition: ease-out 0.1s;
+    color: rgb(248, 183, 118);
+}
+
+.dropdown-menu .dropdown-item {
+    color: rgb(231, 228, 225);
+}
+
+.profile-picture {
+    font-size: 7rem;
+}
+
+.background-gradient {
+    background: linear-gradient(100deg, rgb(197, 197, 197), rgb(236, 231, 220), rgb(223, 218, 209), rgba(189, 175, 148, 0.938), rgb(216, 206, 188), rgb(189, 175, 159))
+}
+
+form {
+    font-family: "Quicksand-SemiBold";
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+form input {
+    color: initial;
+    font-family: "Quicksand-Light";
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 3px;
+}
+
+form select {
+    font-family: "Quicksand-Light";
+    background: transparent;
+    border: 1px solid rgba(116, 78, 9, 0.849);
+    border-radius: 3px;
+    margin-left: 0.2rem;
+    background-color: rgba(116, 78, 9, 0.849);
+}
+
+.md-width-select {
+    width: 5rem;
+}
+
+.lg-width-select {
+    width: 100%;
+}
+
+.heading {
+    font-size: 2.0rem;
+    color: rgb(51, 50, 50);
+    text-align: center;
+    text-shadow: 1px 1px 3px rgb(192, 192, 192);
+}
+
+.form-group span {
+    margin-left: 0.5rem;
+    font-family: "Quicksand-medium";
+    color: rgb(185, 23, 23);
+    margin-top: -0.2rem;
+    text-align: center;
+}
+
+form input:focus {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(65, 40, 7);
+    transition-duration: 200ms;
+    transform-origin: right;
+    box-shadow: 0 0 2pt 1pt rgba(116, 78, 9, 0.849);
+}
+
+form input[type="radio"]:focus {
+    box-shadow: 0 0 2pt 1pt rgba(116, 78, 9, 0.849);
+}
+
+form input[type="radio"]:hover {
+    box-shadow: 0 0 2pt 1pt rgba(116, 78, 9, 0.849);
+}
+
+form select:focus {
+    color: white;
+    border: 1px solid rgb(65, 40, 7);
+    box-shadow: 0 0 2pt 1pt rgba(116, 78, 9, 0.849);
+}
+
+.bg-gradient {
+    background: linear-gradient(130deg, rgb(226, 225, 225), rgba(253, 250, 247, 0.548), rgb(218, 210, 198), rgb(233, 220, 212))
+}
+
+input[name="gender"] {
+    outline: none;
+    background: transparent;
+}
+
+.shadow {
+    box-shadow: 10px 10px 15px black;
+}
+
+.navbar-gradient {
+    background: linear-gradient(160deg, rgba(236, 232, 232, 0.863), rgba(224, 204, 185, 0.726), rgba(214, 202, 198, 0.644));
+    color: rgb(253, 124, 2);
+    box-shadow: 1px 1px 1px rgb(29, 28, 28);
+
+}
+
+.form-row label {
+    margin-left: 0.5rem;
+}
+
+.side-navbar {
+    position: fixed;
+    height: 100%;
+    width: 19.5%;
+    background: linear-gradient(110deg, rgba(224, 222, 216, 0.67), rgba(238, 233, 222, 0.7))
+}
+
+.side-navbar-logo {
+    margin-top: 6rem;
+}
+
+.bio-overview {
+    margin-left: 22.5%;
+}
+
+.profile-row {
+    margin-left: 11%;
+    display: flex;
+}
+
+input[type='submit'] {
+    padding: 0.9rem 0.9rem 0.9rem 0.9rem;
+    font-family: Quicksand-semibold;
+    border-radius: 9px;
+    border: none;
+    color: rgb(235, 226, 217);
+    background: linear-gradient(90deg, rgb(71, 59, 34), rgb(180, 135, 51), rgb(95, 67, 18));
+}
+
+input[type='submit']:hover {
+    transform: scale(1);
+    color: rgb(250, 222, 191);
+    box-shadow: 2px 4px 5px rgb(66, 66, 66);
+}
+
+.profile-image {
+    max-width: 200px;
+}
+
+.profile-image-container {
+    display: block;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.profile-image-btn {
+    background: linear-gradient(90deg, rgb(71, 59, 34), rgb(180, 135, 51), rgb(95, 67, 18));
+    padding: 1rem 1rem 1rem 1rem;
+    color: rgb(209, 194, 177);
+    border-radius: 9px;
+    transition: ease-in 0.2s;
+}
+
+.profile-image-btn:hover {
+    transform: scale(1);
+    color: rgb(250, 222, 191);
+    cursor: pointer;
+    box-shadow: 2px 4px 5px rgb(66, 66, 66);
+    transition: ease-out 0.3s;
+}
+
+.overview-info {
+    margin-top: 6rem;
+    margin-left: 5rem;
+}
+
+.medium-profile-icon {
+    max-width: 40px;
+}
+
+.small-profile-icon {
+    max-width: 20px;
+}
+
+.overview-item {
+    font-family: Quicksand-light;
+    color: rgb(78, 37, 4)
+}
+
+.small-icon {
+    max-width: 30px;
+}
+
+.small-title {
+    max-width: 200px;
+}
+
+.logo-in-profile {
+    margin-left: 6rem;
+}
+
+.min-width-md {
+    min-height: 75vh;
+}
+
+.alert-danger {
+    background: linear-gradient(120deg, rgb(99, 42, 42), rgb(160, 7, 7), rgb(94, 23, 23));
+    color: rgb(211, 104, 104);
+    border: none;
+}
+
+.alert-success {
+    background: linear-gradient(120deg, rgb(22, 94, 32), rgb(46, 133, 75), rgb(8, 110, 42));
+    color: rgb(8, 66, 18);
+    border: none;
+}

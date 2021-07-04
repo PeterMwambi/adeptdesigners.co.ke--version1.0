@@ -1,0 +1,25 @@
+.banner-item {
+  padding: 1.5rem;
+  background-color: rgb(190, 190, 190);
+  margin-right: 30px;
+}
+.side-navbar {
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  width: 20%;
+  top: 0;
+  padding-top: 6.5rem;
+}
+.side-navbar li {
+  display: block;
+  margin-top: 0.5rem;
+  list-style-type: none;
+  padding: 1.5rem;
+}
+.container-item-resize {
+  margin-left: 23%;
+}
+.top-20 {
+  top: 20% !important;
+}
